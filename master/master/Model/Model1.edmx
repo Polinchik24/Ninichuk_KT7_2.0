@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище masterfloorModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameCity" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameHouse" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IndexA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameIndex" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MatType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProB" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Obl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameObl" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamePartner" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PartnerProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameProduct" Type="int" Nullable="false" />
+          <Property Name="NamePartner" Type="int" Nullable="false" />
+          <Property Name="kolvoProduct" Type="int" Nullable="false" />
+          <Property Name="SaleDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameTypePartners" Type="int" Nullable="false" />
+          <Property Name="NamePartner" Type="int" Nullable="false" />
+          <Property Name="SurName" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="IndexA" Type="int" Nullable="false" />
+          <Property Name="Obl" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="House" Type="int" Nullable="false" />
+          <Property Name="INN" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Reit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameProduct" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameTypeProduct" Type="int" Nullable="false" />
+          <Property Name="NameProduct" Type="int" Nullable="false" />
+          <Property Name="Article" Type="int" Nullable="false" />
+          <Property Name="MinS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameProduct" Type="int" Nullable="false" />
+          <Property Name="KType" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Street">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="NameStreet" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypePartners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameTypePartner" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameTypeProduct" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PartnerProducts_Partner">
+          <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+          <End Role="PartnerProducts" Type="Self.PartnerProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PartnerProducts">
+              <PropertyRef Name="NamePartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartnerProducts_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="PartnerProducts" Type="Self.PartnerProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PartnerProducts">
+              <PropertyRef Name="NameProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partners_PartnerProducts">
+          <End Role="PartnerProducts" Type="Self.PartnerProducts" Multiplicity="1" />
+          <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartnerProducts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Partners">
+              <PropertyRef Name="NamePartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partners_TypePartners">
+          <End Role="TypePartners" Type="Self.TypePartners" Multiplicity="1" />
+          <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePartners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Partners">
+              <PropertyRef Name="NameTypePartners" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Product1">
+          <End Role="Product1" Type="Self.Product1" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="NameProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_TypeProduct">
+          <End Role="TypeProduct" Type="Self.TypeProduct" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="NameTypeProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductType_Product1">
+          <End Role="Product1" Type="Self.Product1" Multiplicity="1" />
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductType">
+              <PropertyRef Name="NameProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище masterfloorModelContainer">
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndexA" EntityType="Self.IndexA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MatType" EntityType="Self.MatType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obl" EntityType="Self.Obl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partner" EntityType="Self.Partner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PartnerProducts" EntityType="Self.PartnerProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product1" EntityType="Self.Product1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypePartners" EntityType="Self.TypePartners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeProduct" EntityType="Self.TypeProduct" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PartnerProducts_Partner" Association="Self.FK_PartnerProducts_Partner">
+            <End Role="Partner" EntitySet="Partner" />
+            <End Role="PartnerProducts" EntitySet="PartnerProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartnerProducts_Products" Association="Self.FK_PartnerProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="PartnerProducts" EntitySet="PartnerProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partners_PartnerProducts" Association="Self.FK_Partners_PartnerProducts">
+            <End Role="PartnerProducts" EntitySet="PartnerProducts" />
+            <End Role="Partners" EntitySet="Partners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partners_TypePartners" Association="Self.FK_Partners_TypePartners">
+            <End Role="TypePartners" EntitySet="TypePartners" />
+            <End Role="Partners" EntitySet="Partners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Product1" Association="Self.FK_Products_Product1">
+            <End Role="Product1" EntitySet="Product1" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_TypeProduct" Association="Self.FK_Products_TypeProduct">
+            <End Role="TypeProduct" EntitySet="TypeProduct" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductType_Product1" Association="Self.FK_ProductType_Product1">
+            <End Role="Product1" EntitySet="Product1" />
+            <End Role="ProductType" EntitySet="ProductType" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterfloorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameCity" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameHouse" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IndexA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameIndex" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MatType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProB" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Obl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameObl" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamePartner" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PartnerProducts" Relationship="Self.FK_PartnerProducts_Partner" FromRole="Partner" ToRole="PartnerProducts" />
+        </EntityType>
+        <EntityType Name="PartnerProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameProduct" Type="Int32" Nullable="false" />
+          <Property Name="NamePartner" Type="Int32" Nullable="false" />
+          <Property Name="kolvoProduct" Type="Int32" Nullable="false" />
+          <Property Name="SaleDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Partner" Relationship="Self.FK_PartnerProducts_Partner" FromRole="PartnerProducts" ToRole="Partner" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_PartnerProducts_Products" FromRole="PartnerProducts" ToRole="Products" />
+          <NavigationProperty Name="Partners" Relationship="Self.FK_Partners_PartnerProducts" FromRole="PartnerProducts" ToRole="Partners" />
+        </EntityType>
+        <EntityType Name="Partners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameTypePartners" Type="Int32" Nullable="false" />
+          <Property Name="NamePartner" Type="Int32" Nullable="false" />
+          <Property Name="SurName" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IndexA" Type="Int32" Nullable="false" />
+          <Property Name="Obl" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="House" Type="Int32" Nullable="false" />
+          <Property Name="INN" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Reit" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PartnerProducts" Relationship="Self.FK_Partners_PartnerProducts" FromRole="Partners" ToRole="PartnerProducts" />
+          <NavigationProperty Name="TypePartners" Relationship="Self.FK_Partners_TypePartners" FromRole="Partners" ToRole="TypePartners" />
+        </EntityType>
+        <EntityType Name="Product1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameProduct" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_Product1" FromRole="Product1" ToRole="Products" />
+          <NavigationProperty Name="ProductType" Relationship="Self.FK_ProductType_Product1" FromRole="Product1" ToRole="ProductType" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameTypeProduct" Type="Int32" Nullable="false" />
+          <Property Name="NameProduct" Type="Int32" Nullable="false" />
+          <Property Name="Article" Type="Int32" Nullable="false" />
+          <Property Name="MinS" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="PartnerProducts" Relationship="Self.FK_PartnerProducts_Products" FromRole="Products" ToRole="PartnerProducts" />
+          <NavigationProperty Name="Product1" Relationship="Self.FK_Products_Product1" FromRole="Products" ToRole="Product1" />
+          <NavigationProperty Name="TypeProduct" Relationship="Self.FK_Products_TypeProduct" FromRole="Products" ToRole="TypeProduct" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameProduct" Type="Int32" Nullable="false" />
+          <Property Name="KType" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Product1" Relationship="Self.FK_ProductType_Product1" FromRole="ProductType" ToRole="Product1" />
+        </EntityType>
+        <EntityType Name="Street">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameStreet" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypePartners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameTypePartner" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Partners" Relationship="Self.FK_Partners_TypePartners" FromRole="TypePartners" ToRole="Partners" />
+        </EntityType>
+        <EntityType Name="TypeProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameTypeProduct" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_TypeProduct" FromRole="TypeProduct" ToRole="Products" />
+        </EntityType>
+        <Association Name="FK_PartnerProducts_Partner">
+          <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+          <End Role="PartnerProducts" Type="Self.PartnerProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PartnerProducts">
+              <PropertyRef Name="NamePartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartnerProducts_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="PartnerProducts" Type="Self.PartnerProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PartnerProducts">
+              <PropertyRef Name="NameProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partners_PartnerProducts">
+          <End Role="PartnerProducts" Type="Self.PartnerProducts" Multiplicity="1" />
+          <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartnerProducts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Partners">
+              <PropertyRef Name="NamePartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partners_TypePartners">
+          <End Role="TypePartners" Type="Self.TypePartners" Multiplicity="1" />
+          <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypePartners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Partners">
+              <PropertyRef Name="NameTypePartners" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Product1">
+          <End Role="Product1" Type="Self.Product1" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="NameProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductType_Product1">
+          <End Role="Product1" Type="Self.Product1" Multiplicity="1" />
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductType">
+              <PropertyRef Name="NameProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_TypeProduct">
+          <End Role="TypeProduct" Type="Self.TypeProduct" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="NameTypeProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="masterfloorEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="City" EntityType="Self.City" />
+          <EntitySet Name="House" EntityType="Self.House" />
+          <EntitySet Name="IndexA" EntityType="Self.IndexA" />
+          <EntitySet Name="MatType" EntityType="Self.MatType" />
+          <EntitySet Name="Obl" EntityType="Self.Obl" />
+          <EntitySet Name="Partner" EntityType="Self.Partner" />
+          <EntitySet Name="PartnerProducts" EntityType="Self.PartnerProducts" />
+          <EntitySet Name="Partners" EntityType="Self.Partners" />
+          <EntitySet Name="Product1" EntityType="Self.Product1" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" />
+          <EntitySet Name="Street" EntityType="Self.Street" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypePartners" EntityType="Self.TypePartners" />
+          <EntitySet Name="TypeProduct" EntityType="Self.TypeProduct" />
+          <AssociationSet Name="FK_PartnerProducts_Partner" Association="Self.FK_PartnerProducts_Partner">
+            <End Role="Partner" EntitySet="Partner" />
+            <End Role="PartnerProducts" EntitySet="PartnerProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartnerProducts_Products" Association="Self.FK_PartnerProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="PartnerProducts" EntitySet="PartnerProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partners_PartnerProducts" Association="Self.FK_Partners_PartnerProducts">
+            <End Role="PartnerProducts" EntitySet="PartnerProducts" />
+            <End Role="Partners" EntitySet="Partners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partners_TypePartners" Association="Self.FK_Partners_TypePartners">
+            <End Role="TypePartners" EntitySet="TypePartners" />
+            <End Role="Partners" EntitySet="Partners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Product1" Association="Self.FK_Products_Product1">
+            <End Role="Product1" EntitySet="Product1" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductType_Product1" Association="Self.FK_ProductType_Product1">
+            <End Role="Product1" EntitySet="Product1" />
+            <End Role="ProductType" EntitySet="ProductType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_TypeProduct" Association="Self.FK_Products_TypeProduct">
+            <End Role="TypeProduct" EntitySet="TypeProduct" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище masterfloorModelContainer" CdmEntityContainer="masterfloorEntities">
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="masterfloorModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameCity" ColumnName="NameCity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House">
+            <EntityTypeMapping TypeName="masterfloorModel.House">
+              <MappingFragment StoreEntitySet="House">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameHouse" ColumnName="NameHouse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndexA">
+            <EntityTypeMapping TypeName="masterfloorModel.IndexA">
+              <MappingFragment StoreEntitySet="IndexA">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameIndex" ColumnName="NameIndex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MatType">
+            <EntityTypeMapping TypeName="masterfloorModel.MatType">
+              <MappingFragment StoreEntitySet="MatType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProB" ColumnName="ProB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obl">
+            <EntityTypeMapping TypeName="masterfloorModel.Obl">
+              <MappingFragment StoreEntitySet="Obl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameObl" ColumnName="NameObl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partner">
+            <EntityTypeMapping TypeName="masterfloorModel.Partner">
+              <MappingFragment StoreEntitySet="Partner">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NamePartner" ColumnName="NamePartner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartnerProducts">
+            <EntityTypeMapping TypeName="masterfloorModel.PartnerProducts">
+              <MappingFragment StoreEntitySet="PartnerProducts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="NamePartner" ColumnName="NamePartner" />
+                <ScalarProperty Name="kolvoProduct" ColumnName="kolvoProduct" />
+                <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partners">
+            <EntityTypeMapping TypeName="masterfloorModel.Partners">
+              <MappingFragment StoreEntitySet="Partners">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameTypePartners" ColumnName="NameTypePartners" />
+                <ScalarProperty Name="NamePartner" ColumnName="NamePartner" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="IndexA" ColumnName="IndexA" />
+                <ScalarProperty Name="Obl" ColumnName="Obl" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="House" ColumnName="House" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="Reit" ColumnName="Reit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product1">
+            <EntityTypeMapping TypeName="masterfloorModel.Product1">
+              <MappingFragment StoreEntitySet="Product1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="masterfloorModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameTypeProduct" ColumnName="NameTypeProduct" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="MinS" ColumnName="MinS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductType">
+            <EntityTypeMapping TypeName="masterfloorModel.ProductType">
+              <MappingFragment StoreEntitySet="ProductType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="KType" ColumnName="KType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Street">
+            <EntityTypeMapping TypeName="masterfloorModel.Street">
+              <MappingFragment StoreEntitySet="Street">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameStreet" ColumnName="NameStreet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="masterfloorModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypePartners">
+            <EntityTypeMapping TypeName="masterfloorModel.TypePartners">
+              <MappingFragment StoreEntitySet="TypePartners">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameTypePartner" ColumnName="NameTypePartner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeProduct">
+            <EntityTypeMapping TypeName="masterfloorModel.TypeProduct">
+              <MappingFragment StoreEntitySet="TypeProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameTypeProduct" ColumnName="NameTypeProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
